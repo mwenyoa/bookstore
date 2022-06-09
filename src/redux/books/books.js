@@ -13,7 +13,18 @@ export const RemoveBook = (bookId) => ({
 });
 
 // reduce
-const booksReducer = (state = [], action) => {
+const booksReducer = (state = [
+  {
+    id: 1,
+    title: 'No longer at ease',
+    author: 'Chinua Achebe',
+  },
+  {
+    id: 2,
+    title: 'Animal Farm',
+    author: 'Gorge Orwell',
+  },
+], action = {}) => {
   switch (action.type) {
     case ADD_BOOK:
       return [...state, action.payload];
