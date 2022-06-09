@@ -1,9 +1,8 @@
 const CHECK_STATUS = 'bookstore/categoriesReducer/CHECK_STATUS';
+
 const statusText = 'Under Construction';
 // act
-export const checkStatus = () => ({
-  type: CHECK_STATUS,
-});
+export const checkStatus = () => ({ type: CHECK_STATUS });
 
 // reduce
 const categoriesReducer = (state = [], action) => {
