@@ -40,7 +40,7 @@ const Form = () => {
 
   return (
     <div id="form-container">
-      <form onSubmit={submitBookInfo}>
+      <form onSubmit={submitBookInfo} className="form">
         <input type="text" id="title" placeholder="Book Title" onChange={getTitle} value={title} required />
         <input type="text" id="author" placeholder="Book Author" onChange={getAuthor} value={author} required />
         <input type="text" id="category" placeholder="Book category" onChange={getBooKCat} value={category} required />
