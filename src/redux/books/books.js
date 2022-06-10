@@ -29,7 +29,22 @@ export const RemoveBook = (bookId) => async (dispatch) => {
 };
 
 // display books from APi
-
+export const displayBooksList = () => async (dispatch) => {
+  await fetch(baseUrl)
+    .then((res) => res.json())
+    .then((books) => {
+      const booksArr = [];
+      Object.keys(books).forEach((key) => {
+        booksArr.push({
+          item_id: key,
+          title: books[key][0].title,
+          author: books[key][0].author,
+          category: books[key][0].category,
+        });
+      });
+      dispatch({ type: DISPLAY_BOOKS, payload: booksArr });
+    }).catch((error) => error.message);
+};
 // reduce
 const booksReducer = (state = [], action = {}) => {
   switch (action.type) {
