@@ -1,6 +1,6 @@
 ![](https://img.shields.io/badge/Microverse-blueviolet)
 # Bookstore
-> **Bookstore**  is a website built with **React JS** and **Redux** and it is similar to the **Awesome Books** website built in the previous module. **Bookstore** is an **MVP** version of Awesomme Books that allows you to **:**
+> **Bookstore**  is a website built with **React JS** and **Redux** using <a href="https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi">Bookstore API</a> and it is similar to the **Awesome Books** website built in the previous module. **Bookstore** is an **MVP** version of Awesomme Books that allows you to **:**
 > - Display a list of books.
 > - Add a book.
 > - Remove a selected book.
@@ -16,6 +16,7 @@
 - Redux
 - webpack
 - Barbel
+- Bookstore API
 
 ## Live Demo
 
