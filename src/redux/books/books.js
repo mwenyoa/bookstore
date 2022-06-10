@@ -1,35 +1,44 @@
+const baseUrl = 'https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/WnHPz4XrHMWYBaPfNiBC/books';
+// Add book to online storage
 const ADD_BOOK = 'bookstore/booksReducer/ADD_BOOK';
 const REMOVE_BOOK = 'bookstore/booksReducer/REMOVE_BOOK';
+const DISPLAY_BOOKS = 'bookstore/booksReducer/DISPLAY_BOOKS';
+// book API base url
 
-// act
-export const AddBook = (book) => ({
-  type: ADD_BOOK,
-  payload: book,
-});
+export const AddBook = (book) => async (dispatch) => {
+  await fetch(baseUrl, {
+    method: 'POST',
+    body: JSON.stringify(book),
+    headers: {
+      'Content-type': 'application/json; charset=UTF-8',
+    },
+  })
+    .then(() => dispatch({ type: ADD_BOOK, payload: book }))
+    .catch((error) => error.message);
+};
 
-export const RemoveBook = (bookId) => ({
-  type: REMOVE_BOOK,
-  payload: bookId,
-});
+// Remove  book from storage
+export const RemoveBook = (bookId) => async (dispatch) => {
+  await fetch(`${baseUrl}/${bookId}`, {
+    method: 'DELETE',
+    headers: {
+      'Content-type': 'application/json',
+    },
+  })
+    .then(() => dispatch({ type: REMOVE_BOOK, payload: bookId }));
+};
+
+// display books from APi
 
 // reduce
-const booksReducer = (state = [
-  {
-    id: 1,
-    title: 'No longer at ease',
-    author: 'Chinua Achebe',
-  },
-  {
-    id: 2,
-    title: 'Animal Farm',
-    author: 'Gorge Orwell',
-  },
-], action = {}) => {
+const booksReducer = (state = [], action = {}) => {
   switch (action.type) {
     case ADD_BOOK:
       return [...state, action.payload];
     case REMOVE_BOOK:
       return [...state.filter((bookItem) => (bookItem.id !== action.payload))];
+    case DISPLAY_BOOKS:
+      return action.payload;
     default:
       return state;
   }
