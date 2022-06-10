@@ -12,6 +12,7 @@
 - Cascading Style Sheet (CSS).
 - HTML
 - JavaScript
+- Font Awesome
 - Front-end library: React.
 - Redux
 - webpack
