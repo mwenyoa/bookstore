@@ -19,20 +19,29 @@ const Book = ({
         <h3 className="book-title">{title}</h3>
         <h4 className="book-author">{author}</h4>
         <div className="book-button">
-          <button type="button">Comments</button>
+          <button type="button" className="commentBtn">Comments</button>
           <button type="button" className="removeBtn" bookid={id} onClick={() => eraseBook(id)}>Remove</button>
           <button type="button" className="editBtn">Edit</button>
         </div>
       </div>
       <div className="book-progress">
+        <div className="circle-wrapper">
+          <div className="circle">
+            <div className="mask half">
+              <div className="fill">
+                <div className="inside-circle" />
+              </div>
+            </div>
+          </div>
+        </div>
         <div className="progress-text">
-          <p>60%</p>
+          <p>25%</p>
           <p>Completed</p>
         </div>
       </div>
       <div className="book-update">
-        <p>CURRENT CHAPTER</p>
-        <p>Chapter 18</p>
+        <p className="current-chap">CURRENT CHAPTER</p>
+        <p className="chap-num">Chapter 18</p>
         <button type="button">UPDATE PROGRESS</button>
       </div>
     </div>

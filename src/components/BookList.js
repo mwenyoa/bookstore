@@ -10,16 +10,20 @@ const BooksList = () => {
   dispatch(displayBooksList());
   return (
     <section id="books-page">
-      {books.map((book) => (
-        <Book
-          key={book.item_id}
-          title={book.title}
-          author={book.author}
-          id={book.item_id}
-          category={book.category}
-        />
-      ))}
-      <Form />
+      <div className="books">
+        {books.map((book) => (
+          <Book
+            key={book.item_id}
+            title={book.title}
+            author={book.author}
+            id={book.item_id}
+            category={book.category}
+          />
+        ))}
+        <hr />
+        <h2 className="add-book-caption">ADD NEW BOOK</h2>
+        <Form />
+      </div>
     </section>
   );
 };
