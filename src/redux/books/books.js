@@ -1,5 +1,6 @@
+// Add book store  API base url
 const baseUrl = 'https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/WnHPz4XrHMWYBaPfNiBC/books';
-// Add book to online storage
+
 const ADD_BOOK = 'bookstore/booksReducer/ADD_BOOK';
 const REMOVE_BOOK = 'bookstore/booksReducer/REMOVE_BOOK';
 const DISPLAY_BOOKS = 'bookstore/booksReducer/DISPLAY_BOOKS';
